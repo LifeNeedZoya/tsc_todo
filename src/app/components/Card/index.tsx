@@ -1,12 +1,19 @@
+"use client";
 import React from "react";
 
-type Props = {};
+type TaskType = {
+  name: string;
+  id: string;
+  priority: string;
+  author: string;
+  isStatus: string;
+};
 
-function Card({}: Props) {
+function Card({ task }: { task: TaskType }) {
   return (
     <div className="border bg-slate-200 m-7 rounded-2xl max-w-96 text-xl">
       <div className="flex justify-around my-2 ">
-        <p>Name of todo</p>
+        <p>{task.name}</p>
         <div
           className="badge badge-secondary size-7 w-16
         "
@@ -16,11 +23,11 @@ function Card({}: Props) {
       </div>
       <div className="mt-8">
         <span className="text-2xl font-medium">Participant</span>
-        :Anar
+        {task.author}
       </div>
       <div>
         <span className="text-2xl font-medium">Date added</span>
-        :12/12/2004
+        {task.priority}
       </div>
     </div>
   );
